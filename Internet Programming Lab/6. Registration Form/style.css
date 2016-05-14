@@ -1,0 +1,44 @@
+h1{
+	position:fixed;
+	background-color: orange;
+	width:100%;
+	text-align:center;
+	margin: 0%;
+	top:0%;
+	left:0%;
+}
+
+input#signin:hover{
+	background-color: #8d15bb;
+}
+
+.element{
+	margin-top: 2%;
+}
+
+label{
+	font-weight: bolder;
+	display: inline-block;
+    width:20%;
+}
+
+#button{
+	margin-left: 25%;
+}
+
+#userid{
+	margin-top: 5%;
+}
+
+.confirmMessage{
+	color:red;
+}
+
+.confirmMessage{
+	margin-left: 5%;
+}
+
+img{
+	height:100px;
+	width:100px;
+}

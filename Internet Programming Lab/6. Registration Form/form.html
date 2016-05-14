@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration form</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="Validation.js"></script>
+	<h1>Registration Form </h1>
+</head>
+<body>
+	<form name="Registration" action="welcome.html"  method="post" onsubmit="return(validateForm());">
+
+	<div class="element" id="userid">
+		<label for="userid">UserId:</label>
+		<input type="text" name="UserId" onblur="return(validateUserId());"/>
+		<span id="userMessage" class="confirmMessage"></span>
+	</div>
+	
+	<div class="element" id="password">
+		<label for="password">Password:</label>
+		<input type="password" name="Password" onblur="return(validatePassword());"/>
+		<span id="passwordMessage" class="confirmMessage"></span>
+	</div>
+	
+	<div class="element" id="retypepassword">
+		<label for="retypepassword">Retype Password:</label>
+		<input type="password" name="RetypePassword" onblur="return(checkRetypePassword());" />
+		<span id="confirmPasswordMessage" class="confirmMessage"></span>
+	</div>
+	
+	<div class="element" id="fullname">
+		<label for="fullname">FullName:</label>
+		<input type="text" name="FullName" onblur="return(validateFullName());"/>
+		<span id="nameMessage" class="confirmMessage"></span>
+	</div>
+	
+	<div class="element" id="fathername">
+		<label for="fathername">Father's Name:</label>
+		<input type="text" name="FatherName" onblur="return(validateFatherName());"/>
+		<span id="fatherMessage" class="confirmMessage"></span>
+	</div>
+
+	<div class="element" id="date">
+		<label for="dateofbirth">Date of Birth:</label>
+		<input type="date" name="DateOfBirth" onblur="return(validateDate());"/>
+		<span id="dateMessage" class="confirmMessage"></span>
+	</div>
+
+	<div class="element" id="gender">
+		<label for="gender">Gender:</label>
+		<input type="radio" name="gender" value="Male" checked="checked">Male 
+		<input type="radio" name="gender" value="Female">Female
+	</div>
+
+	<div class="element" id="address">
+		<label for="address">Address:</label>
+		<textarea rows="10" cols="30"></textarea>
+	</div>
+
+	<div class="element" id="country">
+		<label for="country">Country:</label>
+		<select>
+			<option value="India" selected> India </option>
+			<option value="SriLanka"> SriLanka</option>
+			<option value="Bangladesh"> Bangladesh</option>
+			<option value="USA"> USA</option>
+			<option value="China">China</option>
+			<option value="Russia">Russia</option>
+		</select>
+	</div>
+
+	<div class="element" id="emailid">
+		<label for="emailid">Email Id:</label>
+		<input type="email" name="Email" onkeyup="return(validateEmail());" />
+		<span id="emailMessage" class="confirmMessage"></span>
+	</div>
+
+	<div class="element" id="phonenumber">
+		<label for="phonenumber">Phone Number:</label>
+		<input type="number" name="PhoneNumber" onblur="return(validatePhoneNumber());"/>
+		<span id="phoneMessage" class="confirmMessage"></span>
+	</div>
+
+	<div class="element" id="language">
+		<label for="language">Language Known:</label>
+		<input type="checkbox" value="English" class="lang"/> English
+		<input type="checkbox" value="Hindi" class="lang"/> Hindi
+		<input type="checkbox" value="Bengali" class="lang"/> Bengali
+		<input type="checkbox" value="Tamil" class="lang"/> Tamil
+	</div>
+
+	<div class="element" id="Myself">
+		<label for="yourself">About yourself:</label>
+		<textarea rows="10" cols="30"></textarea>
+	</div>
+	
+	<div class="element" id="imageUpload">
+		<label for="image">Upload an image:</label>
+		<input type="file" name="FileName" onchange="uploadImage();"/>
+		<img id="image" src="#" alt="" />
+	</div>
+
+	<div class="element" id="button">
+		<input type="submit" value="Signin" id="signin" />
+	</div>
+
+	</form>
+</body>
+</html>
