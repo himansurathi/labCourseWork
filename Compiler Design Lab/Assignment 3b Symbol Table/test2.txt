@@ -1,0 +1,11 @@
+#include stdio.h
+void f(void);
+int main(void){
+auto unsigned short int c,r,w;
+long d,f;
+if(c!=25 && r<=25 || w==0)
+return d+f;
+else
+while(1);
+return 0;
+}

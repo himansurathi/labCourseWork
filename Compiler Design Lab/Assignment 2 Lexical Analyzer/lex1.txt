@@ -1,0 +1,18 @@
+#include stdio.h
+void f(void);
+int main(void){
+	int i;
+	for(i=red; i<blue; i++)
+        f();
+	return ;
+}
+void fruit(void) 
+{
+	const short int j = 25a;
+	int a25;
+	signed auto float variable=abc==def;
+	if j!=key && j>=ghj
+       printf("%d",j);
+    j++; 
+    j=j*(abc!=def&&q);
+}

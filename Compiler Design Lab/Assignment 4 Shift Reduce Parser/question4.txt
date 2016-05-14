@@ -1,0 +1,5 @@
+						Assignment 4
+ 
+Implement a shift Reduce parser whose Input is a context free Grammer
+and the output is the sequence of productions to be used to reduce 
+to the start symbol 

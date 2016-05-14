@@ -1,0 +1,20 @@
+#include <stdio.h>
+void f(void);
+int main(void)
+{
+	int i;st
+	for(i=0; i<10; i++)
+		f();
+	return 0;
+}
+void f(void)
+{
+	const short int _25 = 10;
+	signed auto float variable=(25%3/782)>6;
+	if(j==10)
+		printf("%d ", j);
+	j++; 
+	j=3;
+}
+
+
