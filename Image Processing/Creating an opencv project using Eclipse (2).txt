@@ -1,0 +1,136 @@
+﻿  
+Open CV Installation steps in Ubuntu
+
+sudo apt-get update
+
+sudo apt-get upgrade
+
+
+sudo apt-get install build-essential libgtk2.0-dev libjpeg-dev libtiff5-dev libjasper-dev libopenexr-dev cmake python-dev python-numpy python-tk libtbb-dev libeigen3-dev yasm libfaac-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev libqt4-dev libqt4-opengl-dev sphinx-common texlive-latex-extra libv4l-dev libdc1394-22-dev libavcodec-dev libavformat-dev libswscale-dev default-jdk ant libvtk5-qt4-dev
+
+
+
+( Get the OpenCV Setup file from the concern staff )
+
+
+unzip opencv-2.4.9.zip
+
+
+cd opencv-2.4.9
+
+
+mkdir build
+
+
+cd build
+
+cmake -D WITH_TBB=ON -D BUILD_NEW_PYTHON_SUPPORT=ON -D WITH_V4L=ON -D INSTALL_C_EXAMPLES=ON -D INSTALL_PYTHON_EXAMPLES=ON -D BUILD_EXAMPLES=ON -D WITH_QT=ON -D WITH_OPENGL=ON -D WITH_VTK=ON ..
+
+make
+
+sudo make install
+
+sudo gedit /etc/ld.so.conf.d/opencv.conf
+
+( add the following line in that file )
+
+/usr/local/lib
+
+sudo ldconfig
+
+sudo gedit /etc/bash.bashrc
+( add the below two lines at the end of the file )
+
+PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
+export PKG_CONFIG_PATH
+
+
+OpenCV installation is done
+Creating a New C++ Project on Eclipse
+1. File » New » C++ Project;
+2. Give a name to your project in Project Name;
+3. Choose Executable » Empty Project in Project Type;
+4. Check Linux GCC in Toolchains and press Next;
+5. Uncheck Debug; (personal choice)
+6. Click on Finish;
+
+Linking OpenCV to the newly created project
+1. Select the project and go to the menu Project » Properties (or press Alt+ENTER);
+2. We’re going to modify somethings on Tool Settings tab of C/C++ Build » Settings;
+3. In GCC C++ Compiler » Includes, add “/usr/local/include/opencv” in Include paths (-l). Discover the correct path by typing the following on the terminal: pkg-config --cflags opencv;
+4. Go to GCC C++ Linker » Libraries and add “/usr/local/lib” in Library search paths (-L). Discover the correct path by typing the following on the terminal:: pkg-config --libs opencv;
+5. Still in GCC C++ Linker » Libraries, add the libraries you’ll need in your project in Libraries (-l). 
+opencv_calib3d    
+opencv_flann    
+opencv_legacy     
+opencv_ocl        
+opencv_video 
+opencv_contrib     
+opencv_gpu     
+opencv_ml         
+opencv_photo      
+opencv_videostab 
+opencv_core       
+opencv_highgui  
+opencv_nonfree    
+opencv_stitching  
+opencv_viz 
+opencv_features2d  
+opencv_imgproc  
+opencv_objdetect  
+opencv_superres 
+
+6. Done!
+Creating and building our program
+1. Right-click on the project in Project Explorer and go to New » File;
+2. Give a name to the file, for instance: main.cpp and type (or copy and paste) the code snippet below. Don’t forget to save the file.
+
+#include <stdio.h>
+#include <opencv2/opencv.hpp>
+using namespace cv;
+int main( int argc, char** argv )
+{
+if ( argc ! = 2 )
+{
+printf( " usage: DisplayImage.out <Image_Path>\n" );
+return - 1;
+}
+Mat image;
+image = imread( argv[ 1], 1 );
+if ( ! image.data )
+{
+printf( " No image data \n" );
+return - 1;
+}
+namedWindow( " Display Image" , CV_WINDOW_AUTOSIZE );
+imshow( " Display Image" , image);
+waitKey( 0);
+return 0;
+}
+3. Project » Build All (or Ctrl+B) to build;
+Running the program
+
+On the Terminal, go to the folder where you created the project(cd {workspace}/{project_name}/). Inside, you’re going to see our program (main.cpp) and the folder “Release/”. Access the folder Release and run our program.
+Copy the lena.jpg file to release folder
+ 
+        ./project name lena.jpg
+
+opencv_calib3d
+opencv_flann
+opencv_legacy
+opencv_ocl
+opencv_video
+opencv_contrib
+opencv_gpu
+opencv_ml
+opencv_photo
+opencv_videostab
+opencv_core
+opencv_highgui
+opencv_nonfree
+opencv_stitching
+opencv_viz
+opencv_features2d
+opencv_imgproc
+opencv_objdetect
+opencv_superres
